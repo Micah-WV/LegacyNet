@@ -52,10 +52,10 @@ This lab demonstrates practical skills in:
 
 | VLAN | Name        | Purpose                       |
 |------|-------------|-------------------------------|
-| 10   | Management  | Router, switch, Burgarii mgmt |
-| 20   | Servers     | ghost, VMs, NVR               |
+| 10   | Management  | Router, switch, SOC mgmt |
+| 20   | Servers     | admin, VMs, NVR               |
 | 30   | Surveillance| PoE cameras                   |
-| 40   | Dirty / IoT | EERO Wi-Fi (phones, TV)       |
+| 40   | Dirty / IoT | EERO Wi-Fi (phones, TV, smarthome)       |
 
 **Security rule:** VLAN 40 cannot reach VLANs 10, 20, or 30.
 

@@ -3,17 +3,19 @@
 ## Physical Data Flow
 
 
-Coax from wall
-│
-▼
-Frontier Modem (ISP)
-│
-▼
-EdgeRouter X (WAN) — firewall & routing
-│
-▼
-EdgeSwitch 8-PoE (managed switch)
-│
+Physical Data Flow
+```
+Coax from wall 
+| 
+▼ 
+Frontier Modem (ISP) 
+|
+▼ 
+EdgeRouter X (WAN) — firewall & routing 
+|
+▼ 
+EdgeSwitch 8-PoE (managed switch) 
+|
 ├── Port 1 → EERO (bridge mode) — Wi-Fi for IoT
 ├── Port 2 → Burgarii (management NIC)
 ├── Port 3 → Burgarii (monitor NIC) — port mirror (SPAN)
@@ -21,7 +23,7 @@ EdgeSwitch 8-PoE (managed switch)
 ├── Port 5 → NVR (if separate)
 ├── Ports 6-9 → PoE Cameras (surveillance)
 └── Ports 10-16 → Future servers
-
+```
 ---
 
 ## Logical Segmentation (VLANs)

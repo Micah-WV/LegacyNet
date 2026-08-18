@@ -1,4 +1,4 @@
-# LegacyNet — Network Architecture
+# LegacyNet: Network Architecture
 
 ## Physical Data Flow
 

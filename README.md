@@ -41,7 +41,7 @@ This lab demonstrates practical skills in:
 |-------------------------------|-------------------------------|
 | EdgeRouter X                  | Router / firewall / VLANs     |
 | EdgeSwitch 8-PoE (managed)    | Switching, PoE, port mirroring|
-| OptiPlex 7060 SFF (SOCnode)  | Security Onion (IDS / SIEM)   |
+| OptiPlex 7060 SFF (SOC node)  | Security Onion (IDS / SIEM)   |
 | OptiPlex 7060 SFF (sysadmin-host)     | Proxmox host / VMs / mining   |
 | PoE security cameras (4x)     | Surveillance                  |
 | Wall-mount network cabinet    | Physical organization         |
@@ -52,7 +52,7 @@ This lab demonstrates practical skills in:
 
 | VLAN | Name        | Purpose                       |
 |------|-------------|-------------------------------|
-| 10   | Management  | Router, switch, SOC mgmt |
+| 10   | Management  | Router, switch, SOC node mgmt |
 | 20   | Servers     | sysadmin, VMs, NVR               |
 | 30   | Surveillance| PoE cameras                   |
 | 40   | Dirty / IoT | EERO Wi-Fi (phones, TV, smarthome)       |

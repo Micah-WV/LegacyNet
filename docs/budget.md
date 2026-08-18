@@ -24,7 +24,7 @@
 
 ## Notes
 
-- All costs are estimates — actual pricing will vary
+- All costs are estimates, actual pricing will vary
 - Used/refurbished gear sourced from eBay/Amazon to reduce costs
-- This is a one-time capital investment — ongoing power costs are minimal
+- This is a one-time capital investment, ongoing power costs are minimal
 - Will pivot to solar/battery power in the future for sustainability

@@ -2,8 +2,6 @@
 
 ## Physical Data Flow
 
-
-Physical Data Flow
 ```
 Coax from wall 
 | 

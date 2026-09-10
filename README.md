@@ -32,7 +32,7 @@ This lab demonstrates practical skills in:
 | Device            | Role                              | Status |
 |-------------------|-----------------------------------|--------|
 | Frontier Modem    | ISP internet entry point          | Active |
-| Eero (bridge)     | Wi-Fi access point (IoT / dirty)  | Active |
+| EERO (bridge)     | Wi-Fi access point (IoT / dirty)  | Active |
 | APC UPS           | Power protection for gateway      | Active |
 
 ## Planned Hardware

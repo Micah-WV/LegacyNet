@@ -1,50 +1,20 @@
-# LegacyNet — TODO
+# Project Roadmap & TODOs
 
-## Phase 1: Foundation (Next 1-3 months)
+## Phase 1: Perimeter & Physical Infrastructure (Current Focus)
+- [x] Procure and pull horizontal Cat6/Cat6a S/FTP structured cabling (Garage to Office).
+- [x] Source and purchase bare-metal firewall appliance (Intel N5105 / 4x 2.5GbE).
+- [ ] Assemble firewall internals (Crucial 8GB DDR4 RAM + Patriot 128GB NVMe SSD).
+- [ ] Flash and provision bare-metal OPNsense.
+- [ ] Configure WAN, LAN, and isolated Surveillance firewall interfaces.
+- [ ] Transition Eero mesh infrastructure to transparent Bridge Mode.
+- [ ] Hardwire primary workstations directly to the 2.5Gb core switch.
 
-- [ ] Buy EdgeRouter X
-- [ ] Buy EdgeSwitch 8-PoE
-- [ ] Buy OptiPlex 7060 SFF (SOC node + sysadmin-host)
-- [ ] Buy Intel I350-T2 NIC
-- [ ] Buy NVMe SSD (for logs/storage)
-- [ ] Buy wall-mount cabinet
-- [ ] Buy Cat6 spool + termination tools
-- [ ] Buy 4K PoE camera kit
-- [ ] Install wall-cabinet
-- [ ] Mount router + switch in cabinet
-- [ ] Terminate Cat6 runs
-- [ ] Configure EdgeRouter (VLANs, firewall)
-- [ ] Set Eero to bridge mode
-- [ ] Verify VLAN isolation (ping tests)
+## Phase 2: Compute & Analytics Node
+- [ ] Provision Proxmox VE hypervisor on the ASUS TUF B650 AM5 open-air platform.
+- [ ] Procure and install secondary high-TBW 2TB NVMe SSD for SIEM indices and VM storage.
+- [ ] Deploy local NVR container/VM for isolated IP camera ingestion.
 
-## Phase 2: Security Onion (Burgarii)
-
-- [ ] Install Security Onion (bare metal)
-- [ ] Configure management NIC
-- [ ] Configure monitor NIC (port mirror)
-- [ ] Verify Suricata/Zeek are receiving traffic
-- [ ] Create first dashboard in Kibana
-- [ ] Test alerting (nmap scan on your own network)
-
-## Phase 3: Servers (ghost)
-
-- [ ] Install Proxmox
-- [ ] Create first VM (test)
-- [ ] Deploy Wazuh agent
-- [ ] Set up mining management VM
-
-## Phase 4: Cameras
-
-- [ ] Run Cat6 for 4 camera locations
-- [ ] Terminate drops at patch panel
-- [ ] Install cameras (PoE)
-- [ ] Configure NVR / Frigate / Blue Iris
-- [ ] Verify recording + motion detection
-
-## Phase 5: Polish
-
-- [ ] Update architecture diagram (final)
-- [ ] Label all cables (both ends)
-- [ ] Document power draw + cooling
-- [ ] Create backup/restore procedures
-- [ ] Write final "Lessons Learned"
+## Phase 3: Advanced Telemetry & Hardening
+- [ ] Upgrade core distribution switch to an 802.1Q managed 2.5GbE unit.
+- [ ] Configure hardware Port Mirroring (SPAN) for passive packet capture.
+- [ ] Deploy Security Onion and tune Suricata IDS rulesets for local network monitoring.

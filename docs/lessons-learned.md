@@ -3,7 +3,7 @@
 This document records key decisions, trade-offs, and design pivots made during the evolution of LegacyNet, serving as an engineering reference for risk management and system design.
 
 ## 1. Decoupling Perimeter Routing from the Virtualization Hypervisor
-* **Initial Concept:** Early designs evaluated an all-in-one virtualized architecture—running OPNsense as a VM inside a Proxmox hypervisor alongside heavy analytics tools like Security Onion.
+* **Initial Concept:** Early designs evaluated an all-in-one virtualized architecture; running OPNsense as a VM inside a Proxmox hypervisor alongside heavy analytics tools like Security Onion.
 * **The Failure Mode Identified:** In a single-node setup, any hypervisor kernel update, storage bottleneck from log indexing, or experimental configuration error immediately takes down core family internet access (violation of operational resilience and the "Wife Acceptance Factor").
 * **The Pivot:** We shifted to a **dedicated bare-metal edge firewall** (Intel N5105 mini-PC) for zero-downtime perimeter control, leaving the heavy compute node (ASUS TUF AM5 platform) entirely free for hypervisor experimentation, SIEM testing, and containerized workloads.
 

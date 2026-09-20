@@ -12,7 +12,7 @@
 
 LegacyNet is an on-premises, defense-in-depth network security architecture engineered from bare metal to provide enterprise-grade access control, micro-segmentation, and passive threat detection. 
 
-Rather than relying on closed-source, vendor-managed consumer appliances, this environment implements a verified **Zero-Trust Network Architecture (ZTNA)**. It is constructed to address real-world threat models: supply chain interdiction, untrusted IoT firmware, pervasive surveillance telemetry, and unauthorized egress. The network maintains high-availability operational standards—ensuring that hypervisor experimentation, packet capture, and security analytics remain completely non-disruptive to baseline household production services.
+Rather than relying on closed-source, vendor-managed consumer appliances, this environment implements a verified **Zero-Trust Network Architecture (ZTNA)**. It is constructed to address real-world threat models: supply chain interdiction, untrusted IoT firmware, pervasive surveillance telemetry, and unauthorized egress. The network maintains high-availability operational standards ensuring that hypervisor experimentation, packet capture, and security analytics remain completely non-disruptive to baseline household production services.
 
 ---
 

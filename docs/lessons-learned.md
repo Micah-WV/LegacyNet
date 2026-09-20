@@ -1,27 +1,16 @@
-# LegacyNet: Lessons Learned
+# Engineering Lessons Learned & Architectural Pivots
 
-*This file is a living document. Updated after every milestone, mistake, and "aha!" moment.*
+This document records key decisions, trade-offs, and design pivots made during the evolution of LegacyNet, serving as an engineering reference for risk management and system design.
 
----
+## 1. Decoupling Perimeter Routing from the Virtualization Hypervisor
+* **Initial Concept:** Early designs evaluated an all-in-one virtualized architecture—running OPNsense as a VM inside a Proxmox hypervisor alongside heavy analytics tools like Security Onion.
+* **The Failure Mode Identified:** In a single-node setup, any hypervisor kernel update, storage bottleneck from log indexing, or experimental configuration error immediately takes down core family internet access (violation of operational resilience and the "Wife Acceptance Factor").
+* **The Pivot:** We shifted to a **dedicated bare-metal edge firewall** (Intel N5105 mini-PC) for zero-downtime perimeter control, leaving the heavy compute node (ASUS TUF AM5 platform) entirely free for hypervisor experimentation, SIEM testing, and containerized workloads.
 
-## 2026-08-17 (Planning Phase)
+## 2. Navigating Silicon Pricing & Component Sourcing
+* **The Challenge:** Rapidly shifting component markets (driven by enterprise AI data center demand) created severe price distortions for standalone RAM and NVMe drives, making individual barebones component sourcing financially inefficient for certain tiers.
+* **The Solution:** We deliberately targeted **DDR4-based industrial mini-PCs** rather than cutting-edge DDR5 platforms for the firewall tier. This allowed us to leverage mature, lower-cost memory standards specifically for routing duties while reserving expensive DDR5 investments strictly for the high-performance compute node where memory bandwidth is genuinely required.
 
-**Lesson 1:** Documentation comes first.
-> Even before I bought hardware, writing down the network architecture and VLAN scheme forced me to think through the design. This saved me from buying the wrong equipment.
-
-**Lesson 2:** The Eero will be demoted to bridge mode.
-> I learned that consumer mesh routers like Eero are great for Wi-Fi coverage, but terrible for network segmentation. The EdgeRouter + managed switch hand back control.
-
-**Lesson 3:** One spool of Cat6 does it all.
-> Same cable carries data AND power (PoE). No need for separate runs. Just need a PoE-enabled switch.
-
-**Lesson 4:** Keep it simple at first.
-> For the first project, install Security Onion on bare metal instead of virtualizing with Proxmox. One less layer of complexity while learning.
-
----
-
-## Next Update: After hardware arrives
-
-- [ ] Record actual installation experience
-- [ ] Note any mistakes during cabling
-- [ ] Document VLAN configuration issues (if any)
+## 3. Hardware Supply-Chain Realism
+* **Threat Modeling:** Rather than chasing impossible hardware purity against opaque global silicon fabrication, the architecture embraces a **zero-trust boundary model**. We assume consumer endpoints and standard processors contain complex management engines.
+* **Mitigation:** Control is enforced entirely at the software and network layers via strict default-deny egress rules, hardware-isolated surveillance VLANs, and encrypted DNS transport—ensuring that even if underlying hardware attempts telemetry, it is comprehensively blocked at the perimeter.

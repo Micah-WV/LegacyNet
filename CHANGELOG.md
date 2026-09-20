@@ -24,7 +24,7 @@ and this project adheres to strict versioned documentation of on-premises infras
 - **Demoted Consumer Routing:** Reconfigured Eero mesh hardware from full gateway mode down to transparent Bridge Mode. Stripped all NAT, DHCP, and stateful inspection authority from proprietary Amazon devices; concentrated perimeter control into open-source OPNsense.
 - **Physical Boundary Isolation:** Established dedicated physical interface assignment on the firewall for surveillance hardware, eliminating reliance on soft isolation for untrusted IoT/camera devices.
 - **Workstation Physical Security:** Severed primary Debian/Windows workstation from wireless infrastructure; migrated to hardwired multi-gigabit interface to eliminate wireless attack surface.
-- ### Updated
+### Updated
 - Comprehensive project documentation in `/docs/` including hardware inventory, network architecture, project roadmap (`todo.md`), procurement tracking (`budget.md`), and engineering lessons learned (`lessons-learned.md`).
 
 

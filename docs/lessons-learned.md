@@ -13,4 +13,4 @@ This document records key decisions, trade-offs, and design pivots made during t
 
 ## 3. Hardware Supply-Chain Realism
 * **Threat Modeling:** Rather than chasing impossible hardware purity against opaque global silicon fabrication, the architecture embraces a **zero-trust boundary model**. We assume consumer endpoints and standard processors contain complex management engines.
-* **Mitigation:** Control is enforced entirely at the software and network layers via strict default-deny egress rules, hardware isolated surveillance VLANs, and encrypted DNS transport—ensuring that even if underlying hardware attempts telemetry, it is comprehensively blocked at the perimeter.
+* **Mitigation:** Control is enforced entirely at the software and network layers via strict default-deny egress rules, hardware-isolated surveillance VLANs, and encrypted DNS transport; ensuring that even if underlying hardware attempts telemetry, it is comprehensively blocked at the perimeter.

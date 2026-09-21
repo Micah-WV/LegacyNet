@@ -48,3 +48,8 @@ and this project adheres to strict versioned documentation of on-premises infras
 - Initial conceptual network topology design and repository initialization.
 - Early feasibility assessment of legacy enterprise workstation surplus (Dell OptiPlex platforms) for consolidated virtualization.
 - Baseline requirements gathering for private Monero (XMR) nodes, personal cloud services, and sovereign data containment.
+- 
+### [Unreleased]
+* **Hypervisor Deployment:** Successfully installed Proxmox VE (amd64) bare-metal onto the ASUS TUF B650 compute node via Rufus (DD image mode).
+* **Firmware & Boot Mitigation:** Overcame ASUS UEFI validation hurdles by clearing Secure Boot keys (PK, KEK, DB, DBX) and disabling Fast Boot. Bypassed Ventoy kernel parsing limits by utilizing raw block-level DD writing.
+* **Zero-Trust Air-Gapped Provisioning:** Executed initial hypervisor setup completely offline with placeholder static networking (`192.168.100.100/24`), isolating the node from potential legacy network compromise until the sovereign edge firewall is deployed.

@@ -36,9 +36,8 @@ LegacyNet splits compute and perimeter routing into physically decoupled, purpos
    * **Design Rationale:** Utilizes mature, cost-effective DDR4 standards to insulate the routing layer from enterprise AI-driven RAM price volatility, while providing dedicated hardware-level packet processing for OPNsense.
 
 2. **Compute & Hypervisor Tier (Core Lab)**
-   * **Hardware:** ASUS TUF B650 AM5 platform with DDR5 memory and high-performance NVMe storage.
+   * **Hardware:** ASUS TUF Gaming B650-PLUS WiFi AM5 Desktop Platform with high-performance DDR5 memory and NVMe storage.
    * **Design Rationale:** Allocates high-bandwidth DDR5 resources strictly to the heavy virtualization node, leaving routing duties entirely isolated to prevent hypervisor reboots or storage bottlenecks from taking down internet access.
-
 
 ### 1. Perimeter Appliance (Edge Security Gateway)
 * **Chassis / Compute:** Fanless Industrial Mini-PC (Aluminum heatsink chassis, passive cooling)
@@ -52,7 +51,7 @@ LegacyNet splits compute and perimeter routing into physically decoupled, purpos
 ### 2. Hypervisor & Threat Analytics Host (Compute Node)
 * **Motherboard:** ASUS TUF Gaming B650-PLUS WiFi
   * *Hardening Measure:* Onboard 802.11/Bluetooth silicon logically disabled in UEFI and physically disconnected from antennas to eliminate unmonitored wireless ingress/out-of-band management vulnerabilities.
-* **Processor Platform:** AMD Ryzen AM5 architecture
+* **Processor Platform:** AMD Ryzen AM5 Desktop Architecture
 * **System Memory:** 32GB (2x16GB) G.SKILL Ripjaws S5 DDR5-6000 CL36 (Optimized for heavy log-indexing and in-memory analytics)
 * **Storage Array:**
   * *Boot/OS:* 512GB NVMe SSD (Proxmox VE root environment)
@@ -95,7 +94,7 @@ To resolve the common homelab failure mode—where core family routing collapses
 - [ ] Assemble firewall internals (8GB DDR4 / 128GB NVMe) and provision OPNsense.
 - [ ] Configure core routing interfaces, VLAN segment definitions, and egress policies.
 - [ ] Transition consumer mesh Wi-Fi to transparent Bridge Mode.
-- [ ] Deploy and harden Proxmox VE hypervisor on the ASUS TUF AM5 compute platform.
+- [x] Deploy and harden Proxmox VE hypervisor on the ASUS TUF AM5 compute platform (air-gapped pending perimeter deployment).
 - [ ] Install secondary high-TBW 2TB NVMe SSD for dedicated telemetry storage pools.
 - [ ] Deploy an 802.1Q managed switch with dedicated Port Mirroring (SPAN) to send bidirectional traffic copies to the Proxmox analytics interface.
 - [ ] Deploy Security Onion and tune Suricata IDS rulesets for local network monitoring.

@@ -27,6 +27,19 @@ Rather than relying on closed-source, vendor-managed consumer appliances, this e
 
 ## System Components & Engineering Specifications
 
+### Hardware Architecture & Tiering
+
+LegacyNet splits compute and perimeter routing into physically decoupled, purpose-built nodes to ensure zero-downtime resilience and cost efficiency:
+
+1. **Perimeter Firewall Tier (Edge Routing)**
+   * **Hardware:** Intel N5105 4-port industrial mini-PC (DDR4 / NVMe).
+   * **Design Rationale:** Utilizes mature, cost-effective DDR4 standards to insulate the routing layer from enterprise AI-driven RAM price volatility, while providing dedicated hardware-level packet processing for OPNsense.
+
+2. **Compute & Hypervisor Tier (Core Lab)**
+   * **Hardware:** ASUS TUF B650 AM5 platform with DDR5 memory and high-performance NVMe storage.
+   * **Design Rationale:** Allocates high-bandwidth DDR5 resources strictly to the heavy virtualization node, leaving routing duties entirely isolated to prevent hypervisor reboots or storage bottlenecks from taking down internet access.
+
+
 ### 1. Perimeter Appliance (Edge Security Gateway)
 * **Chassis / Compute:** Fanless Industrial Mini-PC (Aluminum heatsink chassis, passive cooling)
 * **Processor:** Intel Celeron N5105 (4-Core / 4-Thread, up to 2.9GHz)
